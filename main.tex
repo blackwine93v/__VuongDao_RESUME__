@@ -276,10 +276,11 @@
 	% if you need more control on page breaks, remove the parbox
 	\parbox{\mpwidth}{
 		\begin{tabular*}{1\mpwidth}{p{0.72\mpwidth}  r}
-	 		\textcolor{black}{\textbf{#2}} & \colorbox{maincol}{\makebox[0.25\mpwidth]{\textcolor{white}{#1}}} \\
+	 		\textcolor{black}{\textbf{#2}} & \colorbox{maincol}{\makebox[0.28\mpwidth]{\textcolor{white}{#1}}} \\
 			\textcolor{maincol}{\textbf{#3}} & \\
 			\ifthenelse{\isempty{#8}}{}{
-    			\iconhref {Globe} {12} {#8}{#8}{black}
+			    \vspace{0.1pt}
+                \small\iconhref {Globe} {12} {#8}{#8}{black}
     		}
 		\end{tabular*}\\[8pt]
 		
@@ -363,7 +364,7 @@
 %---------------------------------------------------------------------------------------
 %	META IMAGE
 %----------------------------------------------------------------------------------------
-\includegraphics[width=\linewidth]{avatar.jpeg}	%trimming relative to image size
+\includegraphics[width=\linewidth]{avatar.jpg}	%trimming relative to image size
 
 %---------------------------------------------------------------------------------------
 %	META SKILLS
@@ -441,7 +442,7 @@
 {
     \cvlist {
         \item Annual College Scholarship.
-        \item GPA:8.21
+        \item GPA: 8.21
     }
 }
 
@@ -463,6 +464,12 @@
 		\large{ \textcolor{white} {Software Engineer} }
 	\end {center}
 \end{minipage}} \\[14pt]
+\centering{
+    \small\textcolor{black} {
+        \textit{ "You cannot solve a problem with the same mind that created it" } \\
+        - ALBERT EINSTEIN -
+    }\\[4pt]
+}
 \vspace{-12pt}
 
 %---------------------------------------------------------------------------------------
@@ -489,15 +496,15 @@ Pursue the path to become a Solution Architect.
 	{10/2019 - 04/2020}
 	{Software Engineer}
 	{INCOGNITO - Privacy Mode for Cryptocurrency}
-	{Building websites, wallet mobile app, Incognito JS SDK to interact with the Incognito chain.}
+	{Building websites, wallet mobile app, IncognitoJS SDK to interact with the Incognito chain.}
 	{\cvlist{
-	    \item Designed application architect and building Wallet app.
+	    \item Designed application architect and built wallet app (Incognito: Privacy-Preserving Crypto Wallet).
 		\item Built landing pages for launching Incognito nodes, Incognito wallet.
 		\item Maintained wallet chrome extension and wallet web.
-		\item Released open-source IncognitoJS SDK and documentation.
+		\item Released open-source IncognitoJS SDK and documentations.
 		\item Released open-source IncognitoJS React Native package.
 		\item Researched a solution to improve the time of creating a privacy transaction from 10 minutes to 30 seconds.
-		\item Optimized application performance and check for security vulnerabilities.
+		\item Optimized application performance and checked for security vulnerabilities.
 	}}
 	{\cvlist {
 		\item ReactJS, ReduxJS, Pug, SCSS, LESS, Web component.
@@ -509,15 +516,16 @@ Pursue the path to become a Solution Architect.
 	{}
 	{https://github.com/incognitochain}
 	
+\newpage
 \vfill\null
 \cvevent
 	{04/2018 - 04/2020}
 	{Software Engineer}
 	{MECHANICDESK - Workshop Management Software}
-	{Building websites, managing app to track, manage jobs, cars, invoices,... of a mechanic workshop.}
+	{Building websites, mobile app for managing and tracking jobs, cars, invoices, etc. of a mechanic workshop.}
 	{\cvlist{
-	    \item Designed application architect and building MechanicDesk app.
-		\item Built Support Portal website for support admin.
+	    \item Designed application architect and built MechanicDesk app.
+		\item Built Support Portal website for admins.
 	    \item Built Dealer Ship website to manage cars.
 	}}
 	{\cvlist {
@@ -537,12 +545,12 @@ Pursue the path to become a Solution Architect.
 	{09/2018 - 09/2019}
 	{Frontend Engineer}
 	{CONSTANT - P2P Lending}
-	{Responsible for initialing and develop a high traffic secure peer to peer lending platform website that using ReactJS.}
+	{Responsible for initializing and developing a high traffic secure peer-to-peer lending platform website that using ReactJS.}
 	{\cvlist{
 	    \item Designed application architect.
 		\item Implemented features.
 		\item Built Progressive Web App (PWA).
-		\item Optimized application performance and check for security vulnerabilities.
+		\item Optimized application performance and checked for security vulnerabilities.
 	}}
 	{\cvlist {
 		\item ReactJS, Bootstrap, ReduxJS.
@@ -563,9 +571,9 @@ Pursue the path to become a Solution Architect.
 	{Built a web application allows tracking public cameras of the Australia government.\\
 	Support managing, monitoring, viewing and making live stream on these cameras.}
 	{\cvlist{
-	    \item Integrated 2D/3D geographical map/objects.
+	    \item Integrated 2D/3D geographical maps/objects.
 		\item Implemented tracking drones locations.
-		\item Built CCTVs (cameras) managing view.
+		\item Built managing view for CCTVs (cameras).
 		\item Optimized application performance.
 	}}
 	{\cvlist {
@@ -583,7 +591,7 @@ Pursue the path to become a Solution Architect.
 	{11/2017 - 03/2018}
 	{Frontend Engineer}
 	{THX STANDARD}
-	{THX Standard website offers test scores and comparisons of A/V products, using Angular for easy interact frontend.}
+	{THX Standard website offers test scores and comparisons of A/V products, using Angular for intuitive frontend.}
 	{\cvlist{
 	    \item Designed application architect.
 		\item Implemented features.
@@ -605,8 +613,8 @@ Pursue the path to become a Solution Architect.
 	{04/2017 - 10/2017}
 	{Mobile Engineer}
 	{TRIPPER. MATKA- JA KULULASKUT}
-	{Responsible for building a mobile application both Android and iOS,\\
-	support automatically make a travel invoice with a calendar entry and add all receipts to customer book without writing a word.}
+	{Responsible for building a mobile application both Android and iOS, \\
+	support automatically makes a travel invoice with a calendar entry and adds all receipts to customer books without writing a word.}
 	{\cvlist{
 		\item Implemented and enhanced new features.
 		\item Optimized application performance and reducing the size.
