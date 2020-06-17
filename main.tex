@@ -233,6 +233,23 @@
 }
 
 %----------------------------------------------------------------------------------------
+%	CV COMPANY
+%----------------------------------------------------------------------------------------
+
+% Renders a a CV company
+% param 1: section title
+\newcommand{\cvcompany}[3] {
+	% we wrap this part in a parbox, so title and description are not separated on a pagebreak
+	% if you need more control on page breaks, remove the parbox
+	\parbox{\mpwidth}{
+		\begin{tabular*}{1\mpwidth}{p{0.72\mpwidth}  r}
+	 		\textcolor{black}{\textbf{#3}} & \colorbox{maincol}{\makebox[0.28\mpwidth]{\textcolor{white}{#1}}} \\
+			\textcolor{maincol}{\textbf{#2}} & \\
+		\end{tabular*}\\[8pt]
+	}
+}
+
+%----------------------------------------------------------------------------------------
 %	META SKILL
 %----------------------------------------------------------------------------------------
 
@@ -261,49 +278,46 @@
 % is glued together when a pagebreak appears).
 % Additional Information can be passed in text or list form (or other environments).
 % the work you did
-% param 1: time-frame i.e. Sep 14 - Jan 15 etc.
-% param 2:	 event name (job position etc.)
-% param 3: Customer, Employer, Industry
-% param 4: Short description
-% param 5: work done (optional)
-% param 6: technologies include (optional)
-% param 7: achievements (optional)
-% param 8: URL (optional)
+% param 1: Customer, Employer, Industry
+% param 2: Short description
+% param 3: work done (optional)
+% param 4: technologies include (optional)
+% param 5: achievements (optional)
+% param 6: URL (optional)
 
-\newcommand{\cvevent}[8] {
+\newcommand{\cvevent}[6] {
 	
 	% we wrap this part in a parbox, so title and description are not separated on a pagebreak
 	% if you need more control on page breaks, remove the parbox
 	\parbox{\mpwidth}{
-		\begin{tabular*}{1\mpwidth}{p{0.72\mpwidth}  r}
-	 		\textcolor{black}{\textbf{#2}} & \colorbox{maincol}{\makebox[0.28\mpwidth]{\textcolor{white}{#1}}} \\
-			\textcolor{maincol}{\textbf{#3}} & \\
-			\ifthenelse{\isempty{#8}}{}{
+		\begin{tabular*}{1\mpwidth}{p{1.0\mpwidth}  r}
+		    \vcenteredhbox{\icon{Cubes}{12}{}} \hspace{2pt} \textcolor{maincol}{\textbf{#1}} & \\
+			\ifthenelse{\isempty{#6}}{}{
 			    \vspace{0.1pt}
-                \small\iconhref {Globe} {12} {#8}{#8}{black}
+                \small\iconhref {Globe} {12} {#6}{#6}{black}
     		}
 		\end{tabular*}\\[8pt]
 		
-		\ifthenelse{\isempty{#4}}{}{
-			\cvtext{#4}\\
+		\ifthenelse{\isempty{#2}}{}{
+			\cvtext{#2}\\
 		}
+	}
+
+	\ifthenelse{\isempty{#3}}{}{
+		\vspace{9pt}
+		{#3}
+	}
+
+	\ifthenelse{\isempty{#4}}{}{
+		\vspace{9pt}
+		\cvtext{\textbf{Technologies include:}}\\
+		{#4}
 	}
 
 	\ifthenelse{\isempty{#5}}{}{
 		\vspace{9pt}
-		{#5}
-	}
-
-	\ifthenelse{\isempty{#6}}{}{
-		\vspace{9pt}
-		\cvtext{\textbf{Technologies include:}}\\
-		{#6}
-	}
-
-	\ifthenelse{\isempty{#7}}{}{
-		\vspace{9pt}
 		\cvtext{\textbf{Achievements include:}}\\
-		{#7}
+		{#5}
 	}
 	\vspace{14pt}
 }
@@ -371,7 +385,7 @@
 %----------------------------------------------------------------------------------------
 \cvsection{SKILLS}
 
-\cvskill{JavaScript} {5+ yrs} {1} \\[-2pt]
+\cvskill{JavaScript} {4+ yrs} {1} \\[-2pt]
 
 \cvskill{ReactJS} {4+ yrs} {0.95} \\[-2pt]
 
@@ -492,13 +506,16 @@ Pursue the path to become a Solution Architect.
 \vfill\null
 \cvsection{WORK EXPERIENCE}
 
-\cvevent
-	{10/2019 - 04/2020}
+\cvcompany
+    {09/2018 - 04/2020}
 	{Software Engineer}
+	{AUTONOMOUS}
+	
+\cvevent
 	{INCOGNITO - Privacy Mode for Cryptocurrency}
 	{Building websites, wallet mobile app, IncognitoJS SDK to interact with the Incognito chain.}
 	{\cvlist{
-	    \item Designed application architect and built wallet app (Incognito: Privacy-Preserving Crypto Wallet).
+	    \item Designed application base structure and built wallet app (Incognito: Privacy-Preserving Crypto Wallet).
 		\item Built landing pages for launching Incognito nodes, Incognito wallet.
 		\item Maintained wallet chrome extension and wallet web.
 		\item Released open-source IncognitoJS SDK and documentations.
@@ -516,38 +533,12 @@ Pursue the path to become a Solution Architect.
 	{}
 	{https://github.com/incognitochain}
 	
-\newpage
 \vfill\null
 \cvevent
-	{04/2018 - 04/2020}
-	{Software Engineer}
-	{MECHANICDESK - Workshop Management Software}
-	{Building websites, mobile app for managing and tracking jobs, cars, invoices, etc. of a mechanic workshop.}
-	{\cvlist{
-	    \item Designed application architect and built MechanicDesk app.
-		\item Built Support Portal website for admins.
-	    \item Built Dealer Ship website to manage cars.
-	}}
-	{\cvlist {
-		\item Flutter (Dart), Dart Redux.
-		\item VueJS, Pug, SCSS.
-		\item Unit testing with Mocha, Jest, Sinon.
-		\item Test-driven development, code coverage.
-		\item Lazing loading, code splitting.
-		\item GIT, yarn, Webpack, Linux tools.
-	}}
-	{}
-	{https://www.mechanicdesk.com.au}
-
-
-\vfill\null
-\cvevent
-	{09/2018 - 09/2019}
-	{Frontend Engineer}
 	{CONSTANT - P2P Lending}
 	{Responsible for initializing and developing a high traffic secure peer-to-peer lending platform website that using ReactJS.}
 	{\cvlist{
-	    \item Designed application architect.
+	    \item Designed application base structure.
 		\item Implemented features.
 		\item Built Progressive Web App (PWA).
 		\item Optimized application performance and checked for security vulnerabilities.
@@ -562,11 +553,13 @@ Pursue the path to become a Solution Architect.
 	{}
 	{https://www.myconstant.com}
 
-\newpage
 \vfill\null
+\cvcompany
+    {04/2017 - 08/2018}
+	{Software Engineer}
+	{SUNRISE SOFTWARE SOLUTIONS}
+	
 \cvevent
-	{04/2018 - 08/2018}
-	{Frontend Engineer}
 	{EYEVIEW - INSIGHTUS}
 	{Built a web application allows tracking public cameras of the Australia government.\\
 	Support managing, monitoring, viewing and making live stream on these cameras.}
@@ -588,12 +581,10 @@ Pursue the path to become a Solution Architect.
 
 \vfill\null
 \cvevent
-	{11/2017 - 03/2018}
-	{Frontend Engineer}
 	{THX STANDARD}
 	{THX Standard website offers test scores and comparisons of A/V products, using Angular for intuitive frontend.}
 	{\cvlist{
-	    \item Designed application architect.
+	    \item Designed application base structure .
 		\item Implemented features.
 		\item Optimized application performance: loading speed, SEO.
 		\item Responsive for mobile-friendly.
@@ -608,10 +599,7 @@ Pursue the path to become a Solution Architect.
 	{https://www.thxstandard.com}
 
 \vfill\null
-\newpage
 \cvevent
-	{04/2017 - 10/2017}
-	{Mobile Engineer}
 	{TRIPPER. MATKA- JA KULULASKUT}
 	{Responsible for building a mobile application both Android and iOS, \\
 	support automatically makes a travel invoice with a calendar entry and adds all receipts to customer books without writing a word.}
@@ -629,10 +617,13 @@ Pursue the path to become a Solution Architect.
 	{}
 	{https://gettripper.com}
 	
+\newpage
 \vfill\null
+\cvcompany
+    {01/2016 - 03/2017}
+	{Software Engineer}
+	{TAEMBE}
 \cvevent
-	{01/2016 - 03/2017}
-	{FullStack Engineer}
 	{Taembe.vn}
 	{Built and maintained an e-commerce website that using ReactJS and Hapi server.}
 	{\cvlist{
